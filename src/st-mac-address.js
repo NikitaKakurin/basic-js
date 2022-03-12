@@ -14,7 +14,8 @@ import { NotImplementedError } from '../extensions/index.js';
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-export default function isMAC48Address(/* n */) {
-  throw new NotImplementedError('Not implemented');
+ export default function isMAC48Address( n ) {
+  let pattern = /^[(0-9)|(A-F)]{2}(-[(0-9)|(A-F)]{2}){5}$/i
+  return pattern.test(n)
   // remove line with error and write your code here
 }
