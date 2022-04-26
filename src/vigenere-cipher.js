@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Implement class VigenereCipheringMachine that allows us to create
@@ -19,7 +19,7 @@ import { NotImplementedError } from '../extensions/index.js';
  * reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => '!NWAD TA KCATTA'
  * 
  */
-export default class VigenereCipheringMachine {
+class VigenereCipheringMachine {
   constructor(direction){
     this.direction = direction===undefined?true:false;
     this.alphabet = ['a','b','c','d','e','f','g',
@@ -38,6 +38,7 @@ export default class VigenereCipheringMachine {
   }
   encrypt(text, key) {
     return this.getResult(text, key, true);
+
   }
   decrypt(text, key) {
     return this.getResult(text, key, false);
@@ -82,3 +83,7 @@ export default class VigenereCipheringMachine {
     return key;
   }
 }
+
+module.exports = {
+  VigenereCipheringMachine
+};
