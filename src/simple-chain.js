@@ -6,6 +6,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
 const chainMaker = {
+  'chainsArray':[],
   getLength() {
     return this.chainsArray.length;
     // remove line with error and write your code here
