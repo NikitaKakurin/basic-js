@@ -11,9 +11,13 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit( n ) {
+ function deleteDigit( n ) {
   let digitsArr = n.toString().split('');
-  digitsArr.splice(digitsArr.indexOf(`${Math.min.apply(Math, digitsArr)}`),1)
+  let i=0;
+  while(digitsArr[i]>=digitsArr[i+1]&&i+1<digitsArr.length){
+    i++;
+  }  
+  digitsArr.splice(i,1)
   return +digitsArr.join('')
   // remove line with error and write your code here
 }
